@@ -165,10 +165,10 @@ public class SharepointClient {
         try {
 
             //Authentication parameters
-            String userName = "MOHSPFarm";
-            String password = "M0H$PF@RM1";
-            String domain = "mohousingw";
-            String webserviceUrl = "http://www.housing.gov.bh/en/_vti_bin/lists.asmx?WSDL";
+            String userName = "userName";
+            String password = "Password";
+            String domain = "domain";
+            String webserviceUrl = "http://www.abc.com/en/_vti_bin/lists.asmx?WSDL";
             SharepointClient sharepointClient = new SharepointClient();
             //Opening the SOAP port of the Lists Web Service
             ListsSoap port = sharepointClient.sharePointListsAuth(domain + "/" + userName, password, webserviceUrl);
@@ -194,7 +194,7 @@ public class SharepointClient {
         ListsSoap port = null;
         if (userName != null && password != null) {
             try {
-//                URL wsdlLocation = new URL("http://www.housing.gov.bh/en/_vti_bin/lists.asmx?WSDL");
+//                URL wsdlLocation = new URL("http://www.abc.com/en/_vti_bin/lists.asmx?WSDL");
                 URL wsdlLocation = new URL(webserviceUrl);
                 Authenticator.setDefault(new RunHttpSpnego.MyAuthenticator());
                 Lists service = new Lists(wsdlLocation);
@@ -403,19 +403,19 @@ public class SharepointClient {
 
                                     if (newsImg.contains(".JPG")) {
                                         newsImg = newsImg.substring(newsImg.lastIndexOf("src="), newsImg.lastIndexOf(".JPG\""));
-                                        newsImg = newsImg.replaceAll("src=\"", "http://www.housing.gov.bh");
+                                        newsImg = newsImg.replaceAll("src=\"", "http://www.abc.com");
                                         newsImg = newsImg + ".jpg";
                                     } else if (newsImg.contains(".jpg")) {
                                         newsImg = newsImg.substring(newsImg.lastIndexOf("src="), newsImg.lastIndexOf(".jpg\""));
-                                        newsImg = newsImg.replaceAll("src=\"", "http://www.housing.gov.bh");
+                                        newsImg = newsImg.replaceAll("src=\"", "http://www.abc.com");
                                         newsImg = newsImg + ".jpg";
                                     } else if (newsImg.contains(".png")) {
                                         newsImg = newsImg.substring(newsImg.lastIndexOf("src="), newsImg.lastIndexOf(".png\""));
-                                        newsImg = newsImg.replaceAll("src=\"", "http://www.housing.gov.bh");
+                                        newsImg = newsImg.replaceAll("src=\"", "http://www.abc.com");
                                         newsImg = newsImg + ".png";
                                     } else if (newsImg.contains(".PNG")) {
                                         newsImg = newsImg.substring(newsImg.lastIndexOf("src="), newsImg.lastIndexOf(".PNG\""));
-                                        newsImg = newsImg.replaceAll("src=\"", "http://www.housing.gov.bh");
+                                        newsImg = newsImg.replaceAll("src=\"", "http://www.abc.com");
                                         newsImg = newsImg + ".png";
                                     }
 
